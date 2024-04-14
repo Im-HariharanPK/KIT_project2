@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Scrap Asset
+  form(id='scrapForm', method='POST', action='/scraps/scrapAsset')
+    .form-group
+      label(for='assetId') Asset ID:
+      input#assetId.form-control(type='text', name='assetId', required)
+    .form-group
+      label(for='reason') Reason for Scrap:
+      textarea#reason.form-control(name='reason', rows='3', required)
+    button.btn.btn-primary(type='submit') Scrap Asset

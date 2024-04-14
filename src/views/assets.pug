@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  h1 Assets
+  a.btn.btn-primary(href='/assets/add') Add Asset
+  table.table#assetTable
+    thead
+      tr
+        th ID
+        th Type
+        th Make/Model
+        th Serial Number
+        th Actions
+    tbody
+      each asset in assets
+        tr
+          td= asset.id
+          td= asset.type
+          td= asset.makeModel
+          td= asset.serialNumber
+          td
+            a.btn.btn-sm.btn-info(href=`/assets/edit/${asset.id}`) Edit
+            a.btn.btn-sm.btn-danger(href=`/assets/delete/${asset.id}`) Delete
+
+  // Modal for adding/editing asset
+  #assetModal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h5.modal-title Add/Edit Asset
+          button.close(type='button', data-dismiss='modal') ×
+        .modal-body
+          // Add/edit asset form
+          form(id='assetForm', method='POST', action='/assets/save')
+            input(type='hidden', id='assetId', name='assetId')
+            .form-group
+              label(for='type') Type:
+              input#type.form-control(type='text', name='type', required)
+            .form-group
+              label(for='makeModel') Make/Model:
+              input#makeModel.form-control(type='text', name='makeModel', required)
+            .form-group
+              label(for='serialNumber') Serial Number:
+              input#serialNumber.form-control(type='text', name='serialNumber', required)
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+          button.btn.btn-primary(type='submit') Save

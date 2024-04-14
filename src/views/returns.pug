@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Return Asset
+  form(id='returnForm', method='POST', action='/returns/returnAsset')
+    .form-group
+      label(for='employeeId') Employee ID:
+      input#employeeId.form-control(type='text', name='employeeId', required)
+    .form-group
+      label(for='assetId') Asset ID:
+      input#assetId.form-control(type='text', name='assetId', required)
+    .form-group
+      label(for='returnReason') Return Reason:
+      textarea#returnReason.form-control(name='returnReason', rows='3', required)
+    button.btn.btn-primary(type='submit') Return Asset

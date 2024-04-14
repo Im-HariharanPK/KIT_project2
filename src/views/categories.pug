@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 Asset Categories
+  a.btn.btn-primary(href='/categories/add') Add Category
+  table.table#categoryTable
+    thead
+      tr
+        th ID
+        th Name
+        th Actions
+    tbody
+      each category in categories
+        tr
+          td= category.id
+          td= category.name
+          td
+            a.btn.btn-sm.btn-info(href=`/categories/edit/${category.id}`) Edit
+            a.btn.btn-sm.btn-danger(href=`/categories/delete/${category.id}`) Delete
+
+  // Modal for adding/editing category
+  #categoryModal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h5.modal-title Add/Edit Category
+          button.close(type='button', data-dismiss='modal') ×
+        .modal-body
+          // Add/edit category form
+          form(id='categoryForm', method='POST', action='/categories/save')
+            input(type='hidden', id='categoryId', name='categoryId')
+            .form-group
+              label(for='name') Name:
+              input#name.form-control(type='text', name='name', required)
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+          button.btn.btn-primary(type='submit') Save

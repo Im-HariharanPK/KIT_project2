@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Stock View
+  table.table#stockTable
+    thead
+      tr
+        th Asset Type
+        th Total Available
+        th Total Value
+    tbody
+      each stockItem in stockView
+        tr
+          td= stockItem.assetType
+          td= stockItem.totalAvailable
+          td= stockItem.totalValue

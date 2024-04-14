@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Asset History
+  table.table#historyTable
+    thead
+      tr
+        th ID
+        th Asset ID
+        th Action
+        th Date
+        th User
+    tbody
+      each historyEntry in assetHistory
+        tr
+          td= historyEntry.id
+          td= historyEntry.assetId
+          td= historyEntry.action
+          td= historyEntry.date
+          td= historyEntry.user

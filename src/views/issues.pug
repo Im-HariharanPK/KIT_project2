@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Issue Asset
+  form(id='issueForm', method='POST', action='/issues/issueAsset')
+    .form-group
+      label(for='employeeId') Employee ID:
+      input#employeeId.form-control(type='text', name='employeeId', required)
+    .form-group
+      label(for='assetId') Asset ID:
+      input#assetId.form-control(type='text', name='assetId', required)
+    .form-group
+      label(for='issueReason') Issue Reason:
+      textarea#issueReason.form-control(name='issueReason', rows='3', required)
+    button.btn.btn-primary(type='submit') Issue Asset

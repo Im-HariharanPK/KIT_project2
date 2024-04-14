@@ -1,0 +1,53 @@
+project-root/
+│
+├── src/
+│   ├── controllers/
+│   │   ├── employeeController.js
+│   │   ├── assetController.js
+│   │   ├── categoryController.js
+│   │   ├── stockController.js
+│   │   ├── issueController.js
+│   │   ├── returnController.js
+│   │   ├── scrapController.js
+│   │   └── historyController.js
+│   ├── models/
+│   │   ├── Employee.js
+│   │   ├── Asset.js
+│   │   ├── Category.js
+│   │   ├── Stock.js
+│   │   ├── Issue.js
+│   │   ├── Return.js
+│   │   ├── Scrap.js
+│   │   └── History.js
+│   ├── routes/
+│   │   ├── employeeRoutes.js
+│   │   ├── assetRoutes.js
+│   │   ├── categoryRoutes.js
+│   │   ├── stockRoutes.js
+│   │   ├── issueRoutes.js
+│   │   ├── returnRoutes.js
+│   │   ├── scrapRoutes.js
+│   │   └── historyRoutes.js
+│   └── views/
+│       ├── layout.jade
+│       ├── employees.jade
+│       ├── assets.jade
+│       ├── categories.jade
+│       ├── stock.jade
+│       ├── issues.jade
+│       ├── returns.jade
+│       ├── scraps.jade
+│       └── history.jade
+│
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── vendor/
+│       ├── bootstrap/
+│       └── datatables/
+│
+├── app.js
+├── database.js
+└── package.json
