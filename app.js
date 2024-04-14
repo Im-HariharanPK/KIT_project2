@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.set('views', path.join(__dirname, 'src/views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
