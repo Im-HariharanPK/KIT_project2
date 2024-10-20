@@ -10,7 +10,7 @@
   "description": "",
   "dependencies": {
     "@types/node": "^20.12.7",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "node-modules": "^1.0.1",
     "pg": "^8.11.5",
     "pug": "^3.0.2",
